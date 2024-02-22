@@ -8,10 +8,6 @@ to answer questions from your data source, this is for you.
 
 ### 1. Create an OpenAI API token
 
-If you haven't created any OpenAI account yet, please follow this [tutorial](https://fptshop.com.vn/tin-tuc/thu-thuat/cach-tu-tao-tai-khoan-chatgpt-tai-viet-nam-154372) to create one.
-
-Note that, you must use an VPN, and select USA before creating your new account. You can install [this VPN](https://chrome.google.com/webstore/detail/free-vpn-for-chrome-vpn-p/majdfhpaihoncoakbjgbdhglocklcgno) on your browser as I did ;).
-
 After registering your account, navigate to https://platform.openai.com/account/api-keys and click on `Create new secret key`.
 
 ![API key](./imgs/chatgpt.png)
@@ -21,6 +17,10 @@ When you have already created your key, update your `.env.example` file to repla
 ### 2. Run the API
 
 ```shell
+conda create -n text2sql
+conda activate text2sql
+conda install --file requirements.txt
+
 set -a && source .env.example && set +a
 uvicorn main:app --host 0.0.0.0 --port 8081
 ```
