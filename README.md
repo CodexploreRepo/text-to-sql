@@ -22,7 +22,7 @@ conda activate text2sql
 conda install --file requirements.txt
 
 set -a && source .env.example && set +a
-uvicorn main:app --host 0.0.0.0 --port 8081
+uvicorn backend.main:app --host 0.0.0.0 --port 8081 --reload
 ```
 
 Open your browser and access this address `localhost:8081/docs` to access API doc (Swagger UI).
